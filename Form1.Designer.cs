@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             pictureBox1 = new PictureBox();
-            button1 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             label1 = new Label();
             label2 = new Label();
@@ -79,28 +78,18 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.GradientInactiveCaption;
+            pictureBox1.BackColor = Color.LightBlue;
+            pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(31, 131);
+            pictureBox1.Location = new Point(33, 121);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(321, 276);
+            pictureBox1.Size = new Size(312, 289);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.GradientInactiveCaption;
-            button1.BackgroundImageLayout = ImageLayout.Center;
-            button1.Font = new Font("Segoe UI", 9F, FontStyle.Italic, GraphicsUnit.Point);
-            button1.Location = new Point(12, 98);
-            button1.Name = "button1";
-            button1.Size = new Size(361, 330);
-            button1.TabIndex = 1;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
+            pictureBox1.MouseDown += OI;
+            pictureBox1.MouseUp += OI2;
             // 
             // timer1
             // 
@@ -483,11 +472,10 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(825, 623);
-            Controls.Add(label11);
             Controls.Add(pictureBox1);
+            Controls.Add(label11);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(button1);
             Controls.Add(pictureBox2);
             Name = "Form1";
             Text = "Form1";
@@ -512,7 +500,6 @@
         #endregion
 
         private PictureBox pictureBox1;
-        private Button button1;
         private System.Windows.Forms.Timer timer1;
         private Label label1;
         private Label label2;

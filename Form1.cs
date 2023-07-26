@@ -29,29 +29,11 @@ namespace Jogo2
             label10.Text = custo_carrinho.ToString();
             label16.Text = custo_sorveteria.ToString();
 
-        }
-
-        void temporizadorTick()
-        {
-
-        }
-
-        void geradorSorvetes()
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            sorvete += 1;
-
-
             if (sorvete >= 50)
             {
                 pictureBox4.Visible = false;
 
             }
-
             if (sorvete >= 600)
             {
                 pictureBox3.Visible = false;
@@ -61,7 +43,14 @@ namespace Jogo2
             {
                 pictureBox7.Visible = false;
             }
-            atualizaInterface();
+
+
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -77,24 +66,12 @@ namespace Jogo2
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
             sorvete += 1;
-
-
-            if (sorvete >= 50)
-            {
-                pictureBox4.Visible = false;
-
-            }
-            if (sorvete >= 600)
-            {
-                pictureBox3.Visible = false;
-            }
-
-            if (sorvete >= 1000)
-            {
-                pictureBox7.Visible = false;
-            }
             atualizaInterface();
+
+
+
         }
 
 
@@ -104,7 +81,7 @@ namespace Jogo2
             if (sorvete >= custo_pinguim)
             {
                 sorvete -= custo_pinguim;
-                gerador_por_segundo += 1;
+                gerador_por_segundo += 5;
 
                 custo_pinguim *= 2;
 
@@ -149,7 +126,7 @@ namespace Jogo2
             {
                 sorvete -= custo_urso_polar;
 
-                gerador_por_segundo += 3;
+                gerador_por_segundo += 10;
 
                 custo_urso_polar *= 2;
                 addU += 1;
@@ -164,7 +141,7 @@ namespace Jogo2
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("O Sr. Urso produz +3 sorvetes por segundo!");
+            MessageBox.Show("O Sr. Urso produz +10 sorvetes por segundo!");
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -247,6 +224,18 @@ namespace Jogo2
         private void pictureBox3_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void OI(object sender, MouseEventArgs e)
+        {
+            pictureBox1.BackColor = Color.LightBlue;
+        }
+
+        private void OI2(object sender, MouseEventArgs e)
+        {
+
+
+            pictureBox1.BackColor = Color.PowderBlue;
         }
     }
 }
